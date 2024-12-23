@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SFGS Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+            </div>
+            <div class="selectorsCombined">
+          </div>
+      </div>
+
+      <div class="body">
+        <div class="topBar">
+          <h2 class="h2">SFGS Data Overview</h2>
+          
+        </div>
+        <div class="cardsContainer">
+          <div class="cards studentCard">
+            <div class="hexagon">
+              <div class="Icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+            </div>
+            <p class="textIcon">Total Students</p>
+            <p class="number">700</p>
+          </div>
+          <div class="cards teacherCard">
+            <div class="Icon">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <p class="textIcon">Total Teachers</p>
+            <p class="number">32</p>
+          </div>
+          <div class="cards courseCard">
+            <div class="Icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <p class="textIcon">Total Subject</p>
+            <p class="number">35</p>
+          </div>
+          
+        </div>
+        <div class="secondRow">
+          <div class="statistics">
+            <p>Statistics</p>
+            <div id="chartdiv1"></div>
+          </div>
+          <div class="studentRatio">
+            <p>Student Ratio</p>
+            <div id="chartdiv2"></div>
+          </div>
+        </div>
+        <div class="database">
+          <div class="databaseHeader">
+            <p>Database</p>
+            <div class="tabs">
+              <button id="teacherTab" class="default">Teacher</button>
+              <button id="studentTab" class="default active">Student</button>
+              <button id="staffTab" class="default">Staff</button>
+              <div class="line"></div>
+            </div>
+          </div>
+          <table id="studentTable" class="table">
+            <tr>
+              <th>Classes</th>
+              <th>Average Score</th>
+              <th>Grade</th>
+              <th>Pass/Fail</th>
+            </tr>
+            <tr>
+              <td>JSS 1</td>
+              <td>68/100</td>
+              <td>Good performance</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+              <td>JSS 2</td>
+              <td>70/100</td>
+              <td>Excellent performance</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+              <td>JSS 3</td>
+              <td>57/100</td>
+              <td>Average performance</td>
+              <div class="failDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+              <td>SSS 1</td>
+              <td>62/100</td>
+              <td>Good performance</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+                <td>SSS 2</td>
+                <td>60/100</td>
+                <td>Good performance</td>
+                <div class="passDesign">
+                  <td>Pass</td>
+                </div>
+              </tr>
+              <tr>
+                <td>SSS 3</td>
+                <td>48/100</td>
+                <td>Poor performance</td>
+                <div class="passDesign">
+                  <td>Pass</td>
+                </div>
+              </tr>
+          </table>
+          <table id="teacherTable" class="table teacherTable">
+            <tr>
+              <th>Teacher Name</th>
+              <th>Course</th>
+              <th>Students Taught</th>
+              <th>Feedback</th>
+            </tr>
+            <tr>
+              <td>Mrs CB Akinbororoye</td>
+              <td>English Language</td>
+              <td>143</td>
+              <td>Overall good progress</td>
+            </tr>
+            <tr>
+              <td>Mr John Balogun</td>
+              <td>SSS 3 Mathematics</td>
+              <td>38</td>
+              <td>Needs improvement in class participation</td>
+            </tr>
+            <tr>
+              <td>Mr Blessing</td>
+              <td>English Language</td>
+              <td>84</td>
+              <td>Excellent communication skills</td>
+            </tr>
+            <tr>
+              <td>Mr Toluwani</td>
+              <td>Physics</td>
+              <td>44</td>
+              <td>Average performance</td>
+            </tr>
+          </table>
+          <table id="staffTable" class="table">
+            <tr>
+              <th>Staff Name</th>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Joining Date</th>
+              <th>Salary</th>
+            </tr>
+            <tr>
+              <td>Mrs Kemi Akinnehin</td>
+              <td>Bursar</td>
+              <td>Bursary department</td>
+              <td>05/01/17</td>
+              <td>₦45,000</td>
+            </tr>
+            <tr>
+              <td>Mr Akinbobola</td>
+              <td>ICT director</td>
+              <td>ICT Department</td>
+              <td>10/03/23</td>
+              <td>₦28,000</td>
+            </tr>
+            <tr>
+              <td>Mrs Akinbororoye CB</td>
+              <td>Principal</td>
+              <td>Admin department</td>
+              <td>15/06/16</td>
+              <td>₦50,000</td>
+            </tr>
+            <tr>
+              <td>Mr Taiwo Olamide</td>
+              <td>Vice Principal</td>
+              <td>Admin department</td>
+              <td>20/09/20</td>
+              <td>₦40,000</td>
+            </tr>
+          </table>
+
+          <div></div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+  <script src="/script.js"></script>
+  <script src="/chart2.js"></script>
+</html>

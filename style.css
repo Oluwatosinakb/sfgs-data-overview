@@ -1,0 +1,388 @@
+body {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(128, 128, 128, 0.055);
+}
+
+p {
+  margin: 0;
+}
+
+.body {
+  overflow-y: auto;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+.logo {
+  margin-left: 25px;
+}
+
+.selectors {
+  color: rgba(0, 0, 0, 0.699);
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 220px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+
+  transition: color 0.3s;
+}
+
+.selectors i {
+  width: 20px;
+}
+
+.selectors:not(.activeBar):hover {
+  background: linear-gradient(
+    95deg,
+    rgba(63, 94, 251, 0.123) 0%,
+    rgba(177, 86, 223, 0.144) 100%
+  );
+  cursor: pointer;
+  color: rgb(41, 41, 41);
+}
+.activeBar {
+  background: linear-gradient(
+    95deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(178, 86, 223, 1) 100%
+  );
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+}
+
+.selectors div {
+  font-size: 15px;
+  padding-left: 8px;
+}
+
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100%;
+}
+.right-section {
+  display: flex;
+  margin-left: 200px;
+}
+.searchBar {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  padding-right: 30px;
+  border-radius: 30px;
+  height: 35px;
+  width: 190px;
+  padding-left: 15px;
+  margin-top: 20px;
+  outline: 0;
+}
+.searchBar::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+.searchButton {
+  border: none;
+  background: linear-gradient(
+    95deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(178, 86, 223, 1) 100%
+  );
+  height: 43px;
+  width: 50px;
+  border-radius: 25px;
+  margin-top: 16px;
+  margin-left: -50px;
+  margin-right: 30px;
+}
+.searchButton:hover {
+  cursor: pointer;
+}
+
+.searchIcon {
+  height: 16px;
+  margin-top: 3px;
+}
+
+.h2 {
+  padding-left: 40px;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 20px;
+  width: calc(100% - 60px);
+  margin: 0px 30px;
+}
+
+.cards {
+  flex: 1;
+  align-items: center;
+  margin-top: 20px;
+  height: 170px;
+  min-width: 168px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.studentCard {
+  background-color: #9c87fa3b;
+}
+
+.teacherCard {
+  background-color: rgba(250, 135, 154, 0.123);
+}
+.courseCard {
+  background-color: rgba(43, 163, 243, 0.178);
+}
+.examCard {
+  background-color: rgba(236, 145, 41, 0.151);
+}
+
+.Icon {
+  margin-top: 10px;
+  font-size: 22px;
+  z-index: 100;
+}
+
+.textIcon {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.number {
+  margin-top: 7px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.secondRow {
+  display: flex;
+  gap: 20px;
+  margin: 0px 30px;
+}
+.statistics {
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 12px;
+  width: 600px;
+  min-width: 600px;
+}
+
+#chartdiv1,
+#chartdiv2 {
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.statistics p {
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+.studentRatio {
+  flex: 1;
+  background-color: white;
+  height: 300px;
+  min-width: 200px;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+.studentRatio p,
+.databaseHeader p,
+.rightBar p {
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+.database {
+  background-color: white;
+  height: 360px;
+  border-radius: 12px;
+  margin-left: 30px;
+  width: calc(100% - 60px);
+  margin-top: 30px;
+  min-width: 500px;
+}
+
+.databaseHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+  position: relative;
+}
+
+.databaseHeader button {
+  border: none;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.active {
+  background: linear-gradient(
+    to right,
+    rgba(63, 94, 251, 1),
+    rgba(178, 86, 223, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line {
+  width: 65px;
+  height: 3px;
+  border-radius: 7px;
+  background: linear-gradient(
+    95deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(178, 86, 223, 1) 100%
+  );
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+}
+
+.table {
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 20%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 10%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 20%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 14%;
+}
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  width: 8%;
+}
+
+.teacherTable th:nth-child(1),
+.teacherTable td:nth-child(1) {
+  width: 10%;
+}
+
+.teacherTable th:nth-child(2),
+.teacherTable td:nth-child(2) {
+  width: 8%;
+}
+
+.teacherTable th:nth-child(3),
+.teacherTable td:nth-child(3) {
+  width: 10%;
+}
+
+.teacherTable th:nth-child(4),
+.teacherTable td:nth-child(4) {
+  width: 10%;
+}
+.teacherTable th:nth-child(5),
+.teacherTable td:nth-child(5) {
+  width: 25%;
+}
+
+.table tr td {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.685);
+  border-bottom: 1px solid #00000015;
+  padding: 13px 0px;
+}
+
+.table th {
+  font-size: 13px;
+  text-align: left;
+  border-bottom: 1px solid #00000015;
+  padding-bottom: 10px;
+}
+
+.table tr {
+  border-bottom: 1px solid #000000;
+}
+
+.rightBar {
+  background-color: white;
+  width: 350px;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.116);
+}
+.rightBarHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.notifications {
+  background: rgba(0, 0, 0, 0.178);
+  border: none;
+  height: 30px;
+  width: 30px;
+  margin-right: 25px;
+  border-radius: 15px;
+  margin-top: 18px;
+}
+
+.notifications:hover {
+  background: linear-gradient(
+    95deg,
+    rgb(63, 94, 251) 0%,
+    rgb(177, 86, 223) 100%
+  );
+  cursor: pointer;
+  color: white;
+  opacity: 1; /* Set opacity to fully visible */
+}
+
+.notifications:not(:hover) {
+  opacity: 0.7; /* Set opacity to partially visible when not hovered */
+  transition: opacity 0.4s ease-in-out;
+}
+
+.notifications:hover {
+  transition: opacity 0.4s ease-in-out; /* Adding transition for opacity change on hover */
+}
